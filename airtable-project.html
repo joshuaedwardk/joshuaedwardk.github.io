@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
+<style>
+    [v-cloak] {
+        display: none;
+    }
+    ul.affinity {
+        list-style: none;
+        margin-left: -20px;
+
+    }
+    p.description{
+        padding-left: 40px;
+        padding-right: 40px;
+        font-size:11px;
+        padding-bottom:10px;
+
+    }
+    p.affinity{
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size:13px;
+    }
+
+    h3.affinity{
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size:18px;
+    }
+
+    li.affinity {
+        width: 100%;
+
+        max-height:100%;
+
+        overflow: hidden;
+        dixplay: inline-block;
+        float: left;
+        margin: 0 1em 1em 0;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #fff;
+    }
+
+    img {
+        margin-bottom: 1px;
+        max-width: 95%;
+    }
+</style>
+<div id="app">
+    <div class="headline">
+        <h2>NSTP Affinity Partners</h2>
+    </div>
+    <ul class="affinity">
+        <li class="affinity" v-for="item in items">
+            <!-- <template v-if="item['fields']['Affinity Partner'==='checked']"> -->
+            <!--<img :src="item['fields']['Logo'][0]['thumbnails']['large']['url']" alt="" v-if="item['fields']['Logo']"> <-->
+            <p class="affinity"><strong>Posted: </strong> {{item['fields']['Date Created']}}</p>
+            <h3 class="affinity">{{ item['fields']['Classified Ad Category'] }}<br/>{{ item['fields']['Posting Contact Name or Company'] }}</h3>
+            <p class="description">{{item['fields']['Body']}}</p>
+            <!--</template> -->
+        </li>
+    </ul>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            items: [],
+            // html: '<p>test</p>'
+
+        },
+        mounted: function() {
+            this.loadItems();
+        },
+        methods: {
+            loadItems: function() {
+                // Init variables
+
+                var self = this;
+                var app_id = "app1zrz8kOrCVfqIQ";
+                var app_key = "keyBDOAAjARP294wi";
+                this.items = [];
+                axios.get(
+                    "https://api.airtable.com/v0/" +
+                    app_id +
+                    "/Classified?view=Grid%20view",
+                    {
+                        headers: {
+                            Authorization: "Bearer " + app_key
+                        }
+                    }
+                )
+                    .then(function(response) {
+                        self.items = response.data.records;
+                    })
+                    .catch(function(error) {
+                        console.log(error);
+                    });
+            }
+        }
+    });
+
+
+</script>
