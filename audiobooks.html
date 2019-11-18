@@ -85,9 +85,11 @@
 <!--</div>-->
 
 <div class="container">
-    <div id="app">
+    <div class="row">
+        <div class="col-md-12 col-md-6 col-xm-6">
+        <div id="app">
         <div class="card-deck">
-            <div class="card" v-for="item in items" style="width: 18rem;">
+            <div class="card" v-for="item in items" style="width: auto;">
                 <img class="card-img-top" :src="item['fields']['bookCover'][0]['thumbnails']['large']['url']" alt="" v-if="item['fields']['bookCover']">
                 <div class="card-body">
                     <h5 class="card-title"><a :href="item['fields']['url']">{{ item['fields']['Title'] }}</a></h5>
@@ -100,7 +102,8 @@
                     <!-- 					<li class="list-group-item">{{ item['fields']['Rating'] }}</li> -->
                     <li class="list-group-item"> <a :href="item['fields']['url']" class="btn btn-primary btn-block">Link</a> </li>
                 </ul>
-
+            </div>
+            </div>
             </div>
         </div>
     </div>
