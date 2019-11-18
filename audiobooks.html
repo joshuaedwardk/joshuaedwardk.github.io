@@ -3,40 +3,96 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" rel="stylesheet">
 
     <title>Stand-Alone & Series Audiobooks</title>
 </head>
 <body>
-<div class="container-fluid">
-<div class="hero-unit">
-    <h1>Audiobooks</h1>
-    <h2>Stand-Alone & Series Audiobooks</h2>
-    <p>Audiobook instructions: copy The Audiobook to your Google Drive/Dropbox or any other Cloud Storage application.</p>
-    <p>If the audiobook is in a Series or Stand-Alone Book, please navigate to the applicable section </p>
-    <ul>
-        <li>Book Series</li>
-        <li>Stand-Alone Books</li>
-    </ul>
+<!--Navbar-->
+<header>
+    <div class="bg-dark collapse" id="navbarHeader" style="">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-6 py-4">
+                    <h4 class="text-white">About this project</h4>
+                    <p class="text-muted">I have been collecting Audiobooks for over a year and wanted to share, responsibility what I have collected.   Please do not connect directly to the shared google drive account but download it to your own cloud storage.   If you have any questions please contact me.</p>
+                </div>
+                <div class="col-sm-6 col-md-6 py-4">
+                    <h4 class="text-white">Contact</h4>
+                    <ul class="list-unstyled">
+                        <li><a class="text-white" href="mailto:joshuaedwardk@gmail.com">Email me</a></li>
+                        <li><a class="text-white" href="Tel: 1-360-521-2040">Text</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container d-flex justify-content-between">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+<!--                <svg aria-hidden="true" class="mr-2" fill="none" focusable="false" height="20"-->
+<!--                     stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"-->
+<!--                     width="20" xmlns="http://www.w3.org/2000/svg">-->
+<!--                    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>-->
+<!--                    <circle cx="12" cy="13" r="4"></circle>-->
+<!--                </svg>-->
+                <strong>JedwardK</strong>
+            </a>
+            <button aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler collapsed"
+                    data-target="#navbarHeader" data-toggle="collapse" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </div>
+</header>
+<!--Header-->
 
-    <p>Open up on your phone with a recommended app </p>
-    <ul>
-        <li>Apple: <a href="https://apps.apple.com/us/app/bound-cloud-audiobooks/id1041727137">Bound</a></li>
-        <li>Android: <a href="https://play.google.com/store/apps/details?id=ak.alizandro.smartaudiobookplayer&hl=en_US">Smart Audiobook Player</a></li>
-    </ul>
-</div>
-</div>
+<main role="main">
+
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">Audiobooks: Stand-Alone & Series</h1>
+            <p class="lead text-muted">Audiobook instructions: copy The Audiobook to your Google Drive/Dropbox or any other
+                Cloud Storage
+                application.<br/>If the audiobook is in a Series or Stand-Alone Book, please navigate to the applicable
+                section <br/><em>This is just an embedded iframe of the airtable database, if I get more time I will pull this in for a more eloquent solution.</em></p>
+            <a aria-disabled="true" class="btn btn-primary btn-md"
+               href="https://drive.google.com/open?id=104PiDY1fZHfwYmOJ9UtNNkwkQ334IGRA" role="button">Stand Alone Audiobooks</a>
+            <a aria-disabled="true"
+               class="btn btn-secondary btn-md" href="https://drive.google.com/open?id=1AiT6VZJlq6JlsrlIoH10vF_o818Rgv1D" role="button">Audiobooks in Book Series</a>
+
+        </div>
+    </section>
+</main>
+
+<!--Content-->
 <div class="container-fluid">
-    <iframe class="airtable-embed" src="https://airtable.com/embed/shrMDxESqE7Rdg5Sa?backgroundColor=purple&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="1000" style="background: transparent; border: 1px solid #ccc;"></iframe>
+    <div class="row">
+        <div class="col-md-12 col-md-6">
+            <iframe class="airtable-embed"
+                    frameborder="0" height="1000"
+                    onmousewheel=""
+                    src="https://airtable.com/embed/shrMDxESqE7Rdg5Sa?backgroundColor=purple&viewControls=on"
+                    style="background: transparent; border: 1px solid #ccc;"
+                    width="100%"></iframe>
+        </div>
+    </div>
 </div>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
 </html>
