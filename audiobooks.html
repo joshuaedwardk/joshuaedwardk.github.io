@@ -4,7 +4,6 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
-
     <!-- Bootstrap CSS -->
     <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" rel="stylesheet">
@@ -75,66 +74,64 @@
 </main>
 
 <!--Content-->
+<div class="container">
+    <div class="row">
+            <div id="app">
+                <div class="card-deck">
+                    <div class="card" v-for="item in items" style="width: auto;">
+                        <img class="card-img-top" :src="item['fields']['bookCover'][0]['thumbnails']['large']['url']" alt="" v-if="item['fields']['bookCover']">
+                        <div class="card-body">
+                            <h5 class="card-title"><a :href="item['fields']['url']">{{ item['fields']['Title'] }}</a></h5>
+                            <p class="card-text"><a :href="item['fields']['url']"><small>{{ item['fields']['subTitle'] }}</small></a></p>
+                            <small>{{ item['fields']['lookupSeries'] }}</small>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><a :href="item['fields']['url']">{{ item['fields']['lookupAuthor'] }}</a></li>
+                            <li class="list-group-item"><small>{{ item['fields']['lookupGenre'] }}</small></li>
+                        </ul>
+                        <div class="card-footer">
+                            <a :href="item['fields']['url']" class="btn btn-primary btn-block">Link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 <!--<div class="container">-->
 <!--    <div class="row">-->
-<!--        <div class="col-lg-12 col-md-12 col-xm-6">-->
-<!--            <div id="app">-->
-<!--                <div class="card-deck">-->
-<!--                    <div class="card" v-for="item in items" style="width: auto;">-->
-<!--                        <img class="card-img-top" :src="item['fields']['bookCover'][0]['thumbnails']['large']['url']" alt="" v-if="item['fields']['bookCover']">-->
+<!--        <div id="app">-->
+<!--            <div class="card-deck">-->
+<!--                <figure class="card card-flip" v-for="item in items">-->
+<!--                         <div class="card bg-dark text-white">-->
+<!--                        <img :src="item['fields']['bookCover'][0]['thumbnails']['large']['url']" alt=""-->
+<!--                             class="card-img-top" v-if="item['fields']['bookCover']">-->
 <!--                        <div class="card-body">-->
-<!--                            <h5 class="card-title"><a :href="item['fields']['url']">{{ item['fields']['Title'] }}</a></h5>-->
-<!--                            <p class="card-text"><a :href="item['fields']['url']"><small>{{ item['fields']['subTitle'] }}</small></a></p>-->
-<!--                            <small>{{ item['fields']['lookupSeries'] }}</small>-->
-<!--                        </div>-->
-<!--                        <ul class="list-group list-group-flush">-->
-<!--                            <li class="list-group-item"><a :href="item['fields']['url']">{{ item['fields']['lookupAuthor'] }}</a></li>-->
-<!--                            <li class="list-group-item"><small>{{ item['fields']['lookupGenre'] }}</small></li>-->
-<!--                        </ul>-->
-<!--                        <div class="card-footer">-->
-<!--                            <a :href="item['fields']['url']" class="btn btn-primary btn-block">Link</a>-->
+<!--                            <h5 class="card-title"><a :href="item['fields']['url']">{{ item['fields']['Title']-->
+<!--                                }}<br/><span><small>{{ item['fields']['subTitle'] }}</small></span></a></h5></p>-->
 <!--                        </div>-->
 <!--                    </div>-->
-<!--                </div>-->
+
+<!--                    <div class="card">-->
+<!--                        <div class="card-body">-->
+<!--                            <h5 class="card-title"><a :href="item['fields']['url']">{{ item['fields']['Title'] }}</a>-->
+<!--                            </h5>-->
+<!--                            <p><a :href="item['fields']['url']">{{ item['fields']['lookupSeries'] }}</a></p>-->
+<!--                        </div>-->
+<!--                        <ul class="list-group list-group-flush">-->
+<!--                            <li class="list-group-item"><a :href="item['fields']['url']">{{-->
+<!--                                item['fields']['lookupAuthor'] }}</a></li>-->
+<!--                            <li class="list-group-item"><small>{{ item['fields']['lookupGenre'] }}</small></li>-->
+<!--                            <li class="list-group-item">{{ item['fields']['Rating'] }}</li>-->
+<!--                            <li class="list-group-item"><a :href="item['fields']['url']"-->
+<!--                                                           class="btn btn-danger btn-block">Link</a></li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                </figure>-->
 <!--            </div>-->
 <!--        </div>-->
 <!--    </div>-->
 <!--</div>-->
-
-<div class="container">
-    <div class="row">
-        <div id="app">
-            <div class="card-deck">
-                <figure class="card card-flip" v-for="item in items">
-                         <div class="card bg-dark text-white">
-                        <img :src="item['fields']['bookCover'][0]['thumbnails']['large']['url']" alt=""
-                             class="card-img-top" v-if="item['fields']['bookCover']">
-                        <div class="card-body">
-                            <h5 class="card-title"><a :href="item['fields']['url']">{{ item['fields']['Title']
-                                }}<br/><span><small>{{ item['fields']['subTitle'] }}</small></span></a></h5></p>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title"><a :href="item['fields']['url']">{{ item['fields']['Title'] }}</a>
-                            </h5>
-                            <p><a :href="item['fields']['url']">{{ item['fields']['lookupSeries'] }}</a></p>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><a :href="item['fields']['url']">{{
-                                item['fields']['lookupAuthor'] }}</a></li>
-                            <li class="list-group-item"><small>{{ item['fields']['lookupGenre'] }}</small></li>
-                            <li class="list-group-item">{{ item['fields']['Rating'] }}</li>
-                            <li class="list-group-item"><a :href="item['fields']['url']"
-                                                           class="btn btn-danger btn-block">Link</a></li>
-                        </ul>
-                    </div>
-                </figure>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
