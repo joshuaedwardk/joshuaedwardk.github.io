@@ -9,6 +9,7 @@
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" rel="stylesheet">
     <link href="assets/css/card.css" rel="stylesheet">
     <link href="assets/css/flip.css" rel="stylesheet">
+    <link href="assets/css/audiobook.css" rel="stylesheet">
     <title>Stand-Alone & Series Audiobooks</title>
 </head>
 <body>
@@ -85,18 +86,16 @@
         <div class="xs-col-6 mt-3">
             <div id="app">
                 <div class="card-deck">
-                    <div class="card text-center" v-for="item in items" style="width: auto;">
+                    <div class="card text-center mb-4" v-for="item in items" style="width: auto;">
+                        <h5 class="card-audiobook-title"><a :href="item['fields']['url']">{{ item['fields']['Title'] }}</a></h5>
                         <img class="card-img-top" :src="item['fields']['bookCover'][0]['thumbnails']['large']['url']" alt="" v-if="item['fields']['bookCover']">
                         <div class="card-body">
-                            <h5 class="card-title"><a :href="item['fields']['url']">{{ item['fields']['Title'] }}</a></h5>
-                            <p class="card-text"><a :href="item['fields']['url']"><small>{{ item['fields']['subTitle'] }}</small></a></p>
-                            <p class="card-text">{{ item['fields']['lookupSeries'] }}</p>
+<!--                            <h5 class="card-audiobook-sub"><a :href="item['fields']['url']">{{ item['fields']['subTitle'] }}</a></h5>-->
+                            <h5 class="card-audiobook-author"><a :href="item['fields']['url']">{{ item['fields']['lookupAuthor'] }}</a></h5>
+                            <h5 class="card-audiobook-series">{{ item['fields']['#inSeries'] }}</h5>
                         </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><a :href="item['fields']['url']">{{ item['fields']['lookupAuthor'] }}</a></li>
-                        </ul>
-                        <div class="card-footer">
-                            <p class="card-text"><small>{{ item['fields']['lookupGenre'] }}</small></p>
+                                    <div class="card-footer">
+                            <p class="card-audiobook-genre">{{ item['fields']['lookupGenre'] }}</p>
                             </div>
                     </div>
                 </div>
