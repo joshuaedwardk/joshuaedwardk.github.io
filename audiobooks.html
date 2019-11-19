@@ -23,6 +23,13 @@
                         responsibility what I have collected. Please do not connect directly to the shared google drive
                         account but download it to your own cloud storage. If you have any questions please contact
                         me.</p>
+                    <p class="text-muted">Update 1.1</p>
+                    <ul>
+                        <li class="text-muted"><em><small>Direct connection to Audiobooks, if you still want access to the full library above buttons.</small></em></li>
+                        <li class="text-muted"><em><small>Placeholder images to give a cleaner look</small></em></li>
+                        <li class="text-muted"><em><small>Added Uploaded Date</small></em></li>
+
+                    </ul>
                 </div>
                 <div class="col-sm-6 col-md-6 py-4">
                     <h4 class="text-white">Contact</h4>
@@ -65,7 +72,8 @@
                 other
                 Cloud Storage
                 application.<br/>If the audiobook is in a Series or Stand-Alone Book, please navigate to the applicable
-                section <br/><em>The filter will come later</em></p>
+                section <br/><em>The filter will come later</em>
+            </p>
             <a aria-disabled="true" class="btn btn-primary btn-sm"
                href="https://drive.google.com/open?id=104PiDY1fZHfwYmOJ9UtNNkwkQ334IGRA" role="button">Stand Alone</a>
             <a aria-disabled="true"
@@ -74,10 +82,11 @@
         </div>
     </section>
 
-<!--Content-->
 
+<!--Content-->
 <div class="container">
     <div class="row">
+        <div class="xs-col-6 mt-3">
             <div id="app">
                 <div class="card-deck">
                     <div class="card" v-for="item in items" style="width: auto;">
@@ -85,11 +94,12 @@
                         <div class="card-body">
                             <h5 class="card-title"><a :href="item['fields']['url']">{{ item['fields']['Title'] }}</a></h5>
                             <p class="card-text"><a :href="item['fields']['url']"><small>{{ item['fields']['subTitle'] }}</small></a></p>
-                            <small>{{ item['fields']['lookupSeries'] }}</small>
+                            <p class="card-text">{{ item['fields']['lookupSeries'] }}</p>
                         </div>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item"><a :href="item['fields']['url']">{{ item['fields']['lookupAuthor'] }}</a></li>
                             <li class="list-group-item"><small>{{ item['fields']['lookupGenre'] }}</small></li>
+                            <li class="list-group-item"><small><strong>Uploaded:</strong> {{ item['fields']['created'] }}</small></li>
                         </ul>
                         <div class="card-footer">
                             <a :href="item['fields']['url']" class="btn btn-primary btn-block">Link</a>
@@ -97,6 +107,7 @@
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </div>
 
@@ -139,15 +150,14 @@
 <!--        End of bg-light-->
 </main>
 
-<!--<footer class="text-muted">-->
-<!--    <div class="container">-->
-<!--        <p class="float-right">-->
-<!--            <a href="#">Back to top</a>-->
-<!--        </p>-->
-<!--        <p>Album example is © Bootstrap, but please download and customize it for yourself!</p>-->
-<!--        <p>New to Bootstrap? <a href="../../">Visit the homepage</a> or read our <a href="../../getting-started/">getting started guide</a>.</p>-->
-<!--    </div>-->
-<!--</footer>-->
+<footer class="text-muted">
+    <div class="container">
+             <p class="float-right">
+            <a href="#">Back to top</a>
+        </p>
+
+    </div>
+</footer>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <!--vue JS - Airtable-->
