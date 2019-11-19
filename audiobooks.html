@@ -9,9 +9,7 @@
     <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" rel="stylesheet">
     <link href="assets/css/card.css" rel="stylesheet">
-    '
     <link href="assets/css/flip.css" rel="stylesheet">
-
     <title>Stand-Alone & Series Audiobooks</title>
 </head>
 <body>
@@ -56,6 +54,7 @@
         </div>
     </div>
 </header>
+
 <!--Header-->
 <main role="main">
     <section class="jumbotron text-center">
@@ -74,6 +73,7 @@
         </div>
     </section>
 </main>
+
 <!--Content-->
 <!--<div class="container">-->
 <!--    <div class="row">-->
@@ -86,15 +86,11 @@
 <!--                            <h5 class="card-title"><a :href="item['fields']['url']">{{ item['fields']['Title'] }}</a></h5>-->
 <!--                            <p class="card-text"><a :href="item['fields']['url']"><small>{{ item['fields']['subTitle'] }}</small></a></p>-->
 <!--                            <small>{{ item['fields']['lookupSeries'] }}</small>-->
-<!--                            <p class="card-text"><a :href="item['fields']['url']">{{ item['fields']['lookupAuthor'] }}</a></p>-->
 <!--                        </div>-->
-
 <!--                        <ul class="list-group list-group-flush">-->
 <!--                            <li class="list-group-item"><a :href="item['fields']['url']">{{ item['fields']['lookupAuthor'] }}</a></li>-->
 <!--                            <li class="list-group-item"><small>{{ item['fields']['lookupGenre'] }}</small></li>-->
-<!--                             					<li class="list-group-item">{{ item['fields']['Rating'] }}</li> -->
 <!--                        </ul>-->
-
 <!--                        <div class="card-footer">-->
 <!--                            <a :href="item['fields']['url']" class="btn btn-primary btn-block">Link</a>-->
 <!--                        </div>-->
@@ -109,10 +105,8 @@
     <div class="row">
         <div id="app">
             <div class="card-deck">
-                <!-- Wrap two standard cards -->
                 <figure class="card card-flip" v-for="item in items">
-                    <!--                Front Half -->
-                    <div class="card bg-dark text-white">
+                         <div class="card bg-dark text-white">
                         <img :src="item['fields']['bookCover'][0]['thumbnails']['large']['url']" alt=""
                              class="card-img-top" v-if="item['fields']['bookCover']">
                         <div class="card-body">
@@ -120,7 +114,7 @@
                                 }}<br/><span><small>{{ item['fields']['subTitle'] }}</small></span></a></h5></p>
                         </div>
                     </div>
-                    <!--             Back Half -->
+
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title"><a :href="item['fields']['url']">{{ item['fields']['Title'] }}</a>
@@ -137,7 +131,6 @@
                         </ul>
                     </div>
                 </figure>
-                <!-- Wrap two standard cards -->
             </div>
         </div>
     </div>
@@ -148,8 +141,7 @@
 <!--vue JS - Airtable-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js"></script>
 <script src="https://unpkg.com/vue"></script>
-
-
+<script src="assets/js/flip.js"></script>
 <!--Bootstrap Related Script-->
 <script crossorigin="anonymous"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -160,7 +152,6 @@
 <script crossorigin="anonymous"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
 <script>
     var app = new Vue({
         el: "#app",
