@@ -43,7 +43,7 @@
     overflow: hidden;
 }
 
-.card-footer .card-audiobook-genre {
+.audiobook-card-footer .card-audiobook-genre {
     font-size: 9pt;
     line-height: 10pt;
     font-weight: 300;
