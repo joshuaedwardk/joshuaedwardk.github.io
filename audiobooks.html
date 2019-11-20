@@ -9,7 +9,6 @@
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" rel="stylesheet">
     <link href="assets/css/card.css" rel="stylesheet">
     <link href="assets/css/flip.css" rel="stylesheet">
-    <link href="assets/css/audiobook.css" rel="stylesheet">
     <link href="assets/css/jumbotron.css" rel="stylesheet">
     <title>Stand-Alone & Series Audiobooks</title>
 </head>
@@ -60,7 +59,7 @@
 
 <!--Header-->
 <main role="main">
-    <section class="jumbotron text-center">
+    <section class="audiobook-jumbotron text-center">
         <div class="container">
             <h1 class="jumbotron-heading">Audiobooks: Stand-Alone & Series</h1>
             <p class="lead text-muted">Audiobook instructions: copy The Audiobook to your Google Drive/Dropbox or any
@@ -81,74 +80,76 @@
     </section>
 
 
-<!--Content-->
-<div class="container">
-    <div class="row">
-        <div class="xs-col-6 mt-3">
+    <!--Content-->
+    <div class="container">
+        <div class="row">
+
             <div id="app">
                 <div class="card-deck">
-                    <div class="card text-center mb-4" v-for="item in items" style="width: auto;">
+                    <div class="card text-center" v-for="item in items">
                         <div class="audiobook-card-header">
-                        <p class="card-audiobook-title"><a :href="item['fields']['url']">{{ item['fields']['Title'] }}</a></p>
+                            <p class="card-audiobook-title"><a :href="item['fields']['url']">{{ item['fields']['Title']
+                                }}</a></p>
                         </div>
-                        <img class="card-img-top" :src="item['fields']['bookCover'][0]['thumbnails']['large']['url']" alt="" v-if="item['fields']['bookCover']">
+                        <img :src="item['fields']['bookCover'][0]['thumbnails']['large']['url']" alt=""
+                             class="card-img-top" v-if="item['fields']['bookCover']">
                         <div class="card-body">
-<!--                            <h5 class="card-audiobook-sub"><a :href="item['fields']['url']">{{ item['fields']['subTitle'] }}</a></h5>-->
-                            <h5 class="card-audiobook-author"><a :href="item['fields']['url']">{{ item['fields']['lookupAuthor'] }}</a></h5>
+                            <h5 class="card-audiobook-author"><a :href="item['fields']['url']">{{
+                                item['fields']['lookupAuthor'] }}</a></h5>
                             <h5 class="card-audiobook-series">{{ item['fields']['#inSeries'] }}</h5>
                         </div>
-                                    <div class="audiobook-card-footer">
+                        <div class="audiobook-card-footer">
                             <p class="card-audiobook-genre">{{ item['fields']['lookupGenre'] }}</p>
-                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+
         </div>
     </div>
 
 
-<!--<div class="container">-->
-<!--    <div class="row">-->
-<!--        <div id="app">-->
-<!--            <div class="card-deck">-->
-<!--                <figure class="card card-flip" v-for="item in items">-->
-<!--                         <div class="card bg-dark text-white">-->
-<!--                        <img :src="item['fields']['bookCover'][0]['thumbnails']['large']['url']" alt=""-->
-<!--                             class="card-img-top" v-if="item['fields']['bookCover']">-->
-<!--                        <div class="card-body">-->
-<!--                            <h5 class="card-title"><a :href="item['fields']['url']">{{ item['fields']['Title']-->
-<!--                                }}<br/><span><small>{{ item['fields']['subTitle'] }}</small></span></a></h5></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
+    <!--<div class="container">-->
+    <!--    <div class="row">-->
+    <!--        <div id="app">-->
+    <!--            <div class="card-deck">-->
+    <!--                <figure class="card card-flip" v-for="item in items">-->
+    <!--                         <div class="card bg-dark text-white">-->
+    <!--                        <img :src="item['fields']['bookCover'][0]['thumbnails']['large']['url']" alt=""-->
+    <!--                             class="card-img-top" v-if="item['fields']['bookCover']">-->
+    <!--                        <div class="card-body">-->
+    <!--                            <h5 class="card-title"><a :href="item['fields']['url']">{{ item['fields']['Title']-->
+    <!--                                }}<br/><span><small>{{ item['fields']['subTitle'] }}</small></span></a></h5></p>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
 
-<!--                    <div class="card">-->
-<!--                        <div class="card-body">-->
-<!--                            <h5 class="card-title"><a :href="item['fields']['url']">{{ item['fields']['Title'] }}</a>-->
-<!--                            </h5>-->
-<!--                            <p><a :href="item['fields']['url']">{{ item['fields']['lookupSeries'] }}</a></p>-->
-<!--                        </div>-->
-<!--                        <ul class="list-group list-group-flush">-->
-<!--                            <li class="list-group-item"><a :href="item['fields']['url']">{{-->
-<!--                                item['fields']['lookupAuthor'] }}</a></li>-->
-<!--                            <li class="list-group-item"><small>{{ item['fields']['lookupGenre'] }}</small></li>-->
-<!--                            <li class="list-group-item">{{ item['fields']['Rating'] }}</li>-->
-<!--                            <li class="list-group-item"><a :href="item['fields']['url']"-->
-<!--                                                           class="btn btn-danger btn-block">Link</a></li>-->
-<!--                        </ul>-->
-<!--                    </div>-->
-<!--                </figure>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
+    <!--                    <div class="card">-->
+    <!--                        <div class="card-body">-->
+    <!--                            <h5 class="card-title"><a :href="item['fields']['url']">{{ item['fields']['Title'] }}</a>-->
+    <!--                            </h5>-->
+    <!--                            <p><a :href="item['fields']['url']">{{ item['fields']['lookupSeries'] }}</a></p>-->
+    <!--                        </div>-->
+    <!--                        <ul class="list-group list-group-flush">-->
+    <!--                            <li class="list-group-item"><a :href="item['fields']['url']">{{-->
+    <!--                                item['fields']['lookupAuthor'] }}</a></li>-->
+    <!--                            <li class="list-group-item"><small>{{ item['fields']['lookupGenre'] }}</small></li>-->
+    <!--                            <li class="list-group-item">{{ item['fields']['Rating'] }}</li>-->
+    <!--                            <li class="list-group-item"><a :href="item['fields']['url']"-->
+    <!--                                                           class="btn btn-danger btn-block">Link</a></li>-->
+    <!--                        </ul>-->
+    <!--                    </div>-->
+    <!--                </figure>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--</div>-->
 
-<!--        End of bg-light-->
+    <!--        End of bg-light-->
 </main>
 
 <footer class="text-muted">
     <div class="container">
-             <p class="float-right">
+        <p class="float-right">
             <a href="#">Back to top</a>
         </p>
 

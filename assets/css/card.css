@@ -4,60 +4,134 @@
 }
 
 .card-deck .card {
-    margin: 0 0 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    width: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 0%;
+    flex: 1 0 0%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+}
+
+.card:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .audiobook-card-header {
-    padding: 1.25rem;
-    padding-top: .50rem;
-    padding-right: 1.25rem;
-    padding-bottom: .50rem;
-    padding-left: 1.25rem;
+    padding-top: 4px;
+    padding-bottom: 2x;
     margin-bottom: 0;
-    background-color: #D1EEEE;
+    background-color: #fff;
     border-bottom: 1px solid rgba(0, 0, 0, .125);
 }
-.audiobook-card-footer {
-    padding: 1.25rem;
-    padding-top: .50rem;
-    padding-right: 1.25rem;
-    padding-bottom: .50rem;
-    padding-left: 1.25rem;
-    margin-bottom: 0;
-    background-color: #D1EEEE;
-    border-bottom: 1px solid rgba(0, 0, 0, .125);
+
+.audiobook-card-header .card-audiobook-title {
+    font-size: 9pt;
+    line-height: 12pt;
+    font-weight: 700;
+    padding: 4px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-transform: uppercase;
 }
 
 .card-body {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     -webkit-box-flex: 1;
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
-    padding: 1.25rem;
-    padding-top: .50rem;
-    padding-right: 1.25rem;
-    padding-bottom: .50rem;
-    padding-left: 1.25rem;
+    padding-top: 8px;
+    padding-bottom: 8px;
 }
 
 
-@media (min-width: 480px) and (max-width: 767.98px) {
+.card-audiobook-author {
+    font-size: 9pt;
+    line-height: 10pt;
+    font-weight: 500;
+    margin-top: 8px;
+    margin-bottom: 6px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.card .card-audiobook-series {
+    font-size: 9pt;
+    line-height: 10pt;
+    font-weight: 500;
+    margin-top: 8px;
+    margin-bottom: 6px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.audiobook-card-footer {
+    padding: 14px;
+    padding-top: 8px;
+    padding-right: 14px;
+    padding-bottom: 8px;
+    padding-left: 14px;
+    margin-bottom: 0;
+    background-color: #D1EEEE;
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
+}
+
+.audiobook-card-footer .card-audiobook-genre {
+    font-size: 9pt;
+    line-height: 10pt;
+    font-weight: 300;
+    margin-top: 8px;
+    margin-bottom: 6px;
+    font-style: italic;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@media (min-width: 400px) and (max-width: 575.98px) {
     .card-deck .card {
-        -ms-flex: 0 0 45%;
-        flex: 0 0 45%;
+        -ms-flex: 0 0 40%;
+        flex: 0 0 40%;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .card-deck .card {
+        -ms-flex: 0 0 44%;
+        flex: 0 0 44%;
     }
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
     .card-deck .card {
-        -ms-flex: 0 0 32%;
-        flex: 0 0 32%;
+        -ms-flex: 0 0 29%;
+        flex: 0 0 29%;
     }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 992px) and (max-width: 1495.98px) {
     .card-deck .card {
-        -ms-flex: 0 0 18%;
-        flex: 0 0 18%;
+        -ms-flex: 0 0 23%;
+        flex: 0 0 23%;
     }
 }
 
+@media (min-width: 1496px) {
+    .card-deck .card {
+        -ms-flex: 0 0 19%;
+        flex: 0 0 19%;
+    }
+}
