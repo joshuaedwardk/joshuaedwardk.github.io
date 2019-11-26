@@ -93,30 +93,37 @@
 
 
     <!--Content-->
-    <div class="container">
-        <div class="row">
-
-            <div id="app">
-                <div class="card-deck">
-                    <div class="card text-center" v-for="item in items">
-                        <div class="audiobook-card-header">
-                            <p class="card-audiobook-title"><a :href="item['fields']['url']">{{ item['fields']['Title']
-                                }}</a></p>
-                        </div>
-                        <img :src="item['fields']['bookCover'][0]['thumbnails']['large']['url']" alt=""
-                             class="card-img-top" v-if="item['fields']['bookCover']">
-                        <div class="card-body">
-                            <h5 class="card-audiobook-author"><a :href="item['fields']['url']">{{
-                                item['fields']['lookupAuthor'] }}</a></h5>
-                            <h5 class="card-audiobook-series">{{ item['fields']['#inSeries'] }}</h5>
-                        </div>
-                        <div class="audiobook-card-footer">
-                            <p class="card-audiobook-genre">{{ item['fields']['lookupGenre'] }}</p>
-                        </div>
-                    </div>
+    <div class="container-fluid mt-5">
+        <div class="row flex-xl-nowrap">
+            <div class="col-12 col-md-3 col-xl-2">
+                <div class="sidebar-header">
+                    <h3>Audiobook</h3>
                 </div>
             </div>
 
+
+            <div class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5">
+
+                <div id="app">
+                    <div class="card-deck">
+                        <div class="card " v-for="item in items">
+                            <div class="audiobook-card-header">
+                                <p class="card-audiobook-title"><a :href="item['fields']['url']">{{ item['fields']['Title'] }}</a></p>
+                            </div>
+                            <img class="card-img-top" :src="item['fields']['bookCover'][0]['thumbnails']['large']['url']" alt="" v-if="item['fields']['bookCover']">
+                            <div class="card-body">
+                                <!--                            <h5 class="card-audiobook-sub"><a :href="item['fields']['url']">{{ item['fields']['subTitle'] }}</a></h5>-->
+                                <div class="card-audiobook-author"><a :href="item['fields']['url']">by {{ item['fields']['lookupAuthor'] }}</a></div>
+                                <div class="card-audiobook-series">{{ item['fields']['#inSeries'] }}</div>
+                                <p class="card-audiobook-genre">{{ item['fields']['lookupGenre'] }}</p>
+                                <p class="card-audiobook-download"><a :href="item['fields']['url']">Download</a></p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
 
@@ -187,7 +194,8 @@
     var app = new Vue({
         el: "#app",
         data: {
-            items: []
+            items: [],
+            isLoaded:false,
         },
         mounted: function () {
             this.loadItems();

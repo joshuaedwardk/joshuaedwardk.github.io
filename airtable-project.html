@@ -1,109 +1,97 @@
 <!DOCTYPE html>
-<link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
-<style>
-    [v-cloak] {
-        display: none;
-    }
-    ul.affinity {
-        list-style: none;
-        margin-left: -20px;
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vue.js Tutorial | API Example</title>
 
-    }
-    p.description{
-        padding-left: 40px;
-        padding-right: 40px;
-        font-size:11px;
-        padding-bottom:10px;
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
 
-    }
-    p.affinity{
-        padding-left: 20px;
-        padding-right: 20px;
-        font-size:13px;
-    }
-
-    h3.affinity{
-        padding-left: 20px;
-        padding-right: 20px;
-        font-size:18px;
-    }
-
-    li.affinity {
-        width: 100%;
-
-        max-height:100%;
-
-        overflow: hidden;
-        dixplay: inline-block;
-        float: left;
-        margin: 0 1em 1em 0;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        background-color: #fff;
-    }
-
-    img {
-        margin-bottom: 1px;
-        max-width: 95%;
-    }
-</style>
+<body>
 <div id="app">
-    <div class="headline">
-        <h2>NSTP Affinity Partners</h2>
-    </div>
-    <ul class="affinity">
-        <li class="affinity" v-for="item in items">
-            <!-- <template v-if="item['fields']['Affinity Partner'==='checked']"> -->
-            <!--<img :src="item['fields']['Logo'][0]['thumbnails']['large']['url']" alt="" v-if="item['fields']['Logo']"> <-->
-            <p class="affinity"><strong>Posted: </strong> {{item['fields']['Date Created']}}</p>
-            <h3 class="affinity">{{ item['fields']['Classified Ad Category'] }}<br/>{{ item['fields']['Posting Contact Name or Company'] }}</h3>
-            <p class="description">{{item['fields']['Body']}}</p>
-            <!--</template> -->
-        </li>
-    </ul>
-</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="lead-form">
+                    <h1 class="text-center">Fill Out This Form</h1>
+                    <hr />
+                    <div class="row md-4">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Starting Zip" v-model="startingZip">
+                            <span class="city-span">{{startingCity}}</span>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Ending Zip" v-model="endingZip">
+                            <span class="city-span">{{endingCity}}</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button class="btn btn-primary btn-block" id="submit-form">Submit</button>
+                        </div>
+                    </div>
+                </div><!-- end of .lead-form -->
+            </div> <!-- end of .col-md-6.col-md-offset-3 -->
+        </div> <!-- end of .row -->
+    </div> <!-- end of .container -->
+</div> <!-- end of #app -->
+</body>
 
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
+<script src="https://unpkg.com/axios@0.12.0/dist/axios.min.js"></script>
+<script src="https://unpkg.com/lodash@4.13.1/lodash.min.js"></script>
+
 <script>
     var app = new Vue({
-        el: "#app",
+        el: '#app',
         data: {
-            items: [],
-            // html: '<p>test</p>'
-
+            startingZip: '',
+            startingCity: '',
+            endingZip: '',
+            endingCity: ''
         },
-        mounted: function() {
-            this.loadItems();
+        watch: {
+            startingZip: function() {
+                this.startingCity = ''
+                if (this.startingZip.length == 5) {
+                    this.lookupStartingZip()
+                }
+            },
+            endingZip: function() {
+                this.endingCity = ''
+                if (this.endingZip.length == 5) {
+                    this.lookupEndingZip()
+                }
+            }
         },
         methods: {
-            loadItems: function() {
-                // Init variables
-
-                var self = this;
-                var app_id = "app1zrz8kOrCVfqIQ";
-                var app_key = "keyBDOAAjARP294wi";
-                this.items = [];
-                axios.get(
-                    "https://api.airtable.com/v0/" +
-                    app_id +
-                    "/Classified?view=Grid%20view",
-                    {
-                        headers: {
-                            Authorization: "Bearer " + app_key
-                        }
-                    }
-                )
-                    .then(function(response) {
-                        self.items = response.data.records;
+            lookupStartingZip: _.debounce(function() {
+                var app = this
+                app.startingCity = "Searching..."
+                axios.get('http://ziptasticapi.com/' + app.startingZip)
+                    .then(function (response) {
+                        app.startingCity = response.data.city + ', ' + response.data.state
                     })
-                    .catch(function(error) {
-                        console.log(error);
-                    });
-            }
+                    .catch(function (error) {
+                        app.startingCity = "Invalid Zipcode"
+                    })
+            }, 500),
+            lookupEndingZip: _.debounce(function() {
+                var app = this
+                app.endingCity = "Searching..."
+                axios.get('http://ziptasticapi.com/' + app.endingZip)
+                    .then(function (response) {
+                        app.endingCity = response.data.city + ', ' + response.data.state
+                    })
+                    .catch(function (error) {
+                        app.endingCity = "Invalid Zipcode"
+                    })
+            }, 500)
         }
-    });
-
-
+    })
 </script>
+</html>
