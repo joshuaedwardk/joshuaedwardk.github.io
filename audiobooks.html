@@ -48,8 +48,11 @@
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDQMC3Z"
-                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!--<noscript>-->
+<!--    <iframe height="0"-->
+<!--            src="https://www.googletagmanager.com/ns.html?id=GTM-MDQMC3Z" style="display:none;visibility:hidden"-->
+<!--            width="0"></iframe>-->
+<!--</noscript>-->
 <!-- End Google Tag Manager (noscript) -->
 <!--Navbar-->
 <header>
@@ -119,27 +122,28 @@
 
 
     <!--Content-->
-    <div class="container-fluid mt-5">
+    <div class="container mt-5">
         <div class="row flex-xl-nowrap">
-            <div class="col-12 col-md-3 col-xl-2">
-                <div class="sidebar-header">
-                    <h3>Audiobook</h3>
-                </div>
-            </div>
-
-
-            <div class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5">
-
-                <div id="app">
-                    <div class="card-deck">
-                        <div class="card " v-for="item in items">
+<!--            <div class="col-12 col-md-3 col-xl-2">-->
+<!--                <div class="sidebar-header">-->
+<!--                    <h3>Audiobook</h3>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5">-->
+                <div id="job">
+                    <div class="card-group" >
+                        <div class="card mt-2" v-for="item in items">
                             <div class="audiobook-card-header">
-                                <p class="card-audiobook-title"><a :href="item['fields']['url']">{{ item['fields']['Title'] }}</a></p>
+                                <p class="card-audiobook-title"><a :href="item['fields']['url']">{{
+                                    item['fields']['Title'] }}</a></p>
                             </div>
-                            <img class="card-img-top" :src="item['fields']['bookCover'][0]['thumbnails']['large']['url']" alt="" v-if="item['fields']['bookCover']">
+                            <img :src="item['fields']['bookCover'][0]['thumbnails']['large']['url']"
+                                 alt="" class="card-img-top"
+                                 v-if="item['fields']['bookCover']">
                             <div class="card-body">
                                 <!--                            <h5 class="card-audiobook-sub"><a :href="item['fields']['url']">{{ item['fields']['subTitle'] }}</a></h5>-->
-                                <div class="card-audiobook-author"><a :href="item['fields']['url']">by {{ item['fields']['lookupAuthor'] }}</a></div>
+                                <div class="card-audiobook-author"><a :href="item['fields']['url']">by {{
+                                    item['fields']['lookupAuthor'] }}</a></div>
                                 <div class="card-audiobook-series">{{ item['fields']['#inSeries'] }}</div>
                                 <p class="card-audiobook-genre">{{ item['fields']['lookupGenre'] }}</p>
                                 <p class="card-audiobook-download"><a :href="item['fields']['url']">Download</a></p>
@@ -149,46 +153,11 @@
                     </div>
                 </div>
 
-            </div>
+<!--            </div>-->
+
+
         </div>
     </div>
-
-
-    <!--<div class="container">-->
-    <!--    <div class="row">-->
-    <!--        <div id="app">-->
-    <!--            <div class="card-deck">-->
-    <!--                <figure class="card card-flip" v-for="item in items">-->
-    <!--                         <div class="card bg-dark text-white">-->
-    <!--                        <img :src="item['fields']['bookCover'][0]['thumbnails']['large']['url']" alt=""-->
-    <!--                             class="card-img-top" v-if="item['fields']['bookCover']">-->
-    <!--                        <div class="card-body">-->
-    <!--                            <h5 class="card-title"><a :href="item['fields']['url']">{{ item['fields']['Title']-->
-    <!--                                }}<br/><span><small>{{ item['fields']['subTitle'] }}</small></span></a></h5></p>-->
-    <!--                        </div>-->
-    <!--                    </div>-->
-
-    <!--                    <div class="card">-->
-    <!--                        <div class="card-body">-->
-    <!--                            <h5 class="card-title"><a :href="item['fields']['url']">{{ item['fields']['Title'] }}</a>-->
-    <!--                            </h5>-->
-    <!--                            <p><a :href="item['fields']['url']">{{ item['fields']['lookupSeries'] }}</a></p>-->
-    <!--                        </div>-->
-    <!--                        <ul class="list-group list-group-flush">-->
-    <!--                            <li class="list-group-item"><a :href="item['fields']['url']">{{-->
-    <!--                                item['fields']['lookupAuthor'] }}</a></li>-->
-    <!--                            <li class="list-group-item"><small>{{ item['fields']['lookupGenre'] }}</small></li>-->
-    <!--                            <li class="list-group-item">{{ item['fields']['Rating'] }}</li>-->
-    <!--                            <li class="list-group-item"><a :href="item['fields']['url']"-->
-    <!--                                                           class="btn btn-danger btn-block">Link</a></li>-->
-    <!--                        </ul>-->
-    <!--                    </div>-->
-    <!--                </figure>-->
-    <!--            </div>-->
-    <!--        </div>-->
-    <!--    </div>-->
-    <!--</div>-->
-
     <!--        End of bg-light-->
 </main>
 
@@ -207,37 +176,30 @@
 <script src="https://unpkg.com/vue"></script>
 <!--<script src="assets/js/flip.js"></script>-->
 <!--Bootstrap Related Script-->
-<script crossorigin="anonymous"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-<script crossorigin="anonymous"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<script crossorigin="anonymous"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 <script>
     var app = new Vue({
-        el: "#app",
+        el: "#job",
         data: {
             items: [],
-            isLoaded:false,
+            isLoaded: false,
         },
+
         mounted: function () {
             this.loadItems();
         },
         methods: {
             loadItems: function () {
                 // Init variables
+
                 var self = this;
                 var app_id = "apphBgiHVQtcKCzjH";
                 var app_key = "keyBDOAAjARP294wi";
                 this.items = [];
                 axios
-                    .get(
-                        "https://api.airtable.com/v0/" +
-                        app_id +
-                        "/Books?view=grouped",
+                    .get("https://api.airtable.com/v0/" + app_id + "/Books?view=grouped",
                         {
                             headers: {
                                 Authorization: "Bearer " + app_key
@@ -258,8 +220,13 @@
 <!--Google Analytics-->
 <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
     gtag('js', new Date());
+
     gtag('config', 'UA-153143135-1');
 </script>
 </body>
