@@ -9,7 +9,10 @@
     <link href="assets/css/card.css" rel="stylesheet">
     <link href="assets/css/jumbotron.css" rel="stylesheet">
     <!--    Full Calendar-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.2/fullcalendar.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.2/fullcalendar.css">
+    <link rel="stylesheet" href="assets/css/calendar.css">
+<!--    bootstrap theme calendar-->
+
 
     <title>Girls Calendar</title>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -49,14 +52,11 @@
     <meta content="#ffffff" name="theme-color">
 </head>
 <body>
-<main role="main">
-    <!--Content-->
-    <div class="container mt-5">
-        <div class="row ">
-            <div id="calendar"></div>
-        </div>
+<div class="container">
+    <div class="row">
+        <div id="calendar"></div>
     </div>
-</main>
+</div>
 
 <footer class="text-muted">
     <div class="container">
@@ -68,6 +68,7 @@
 </footer>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.2/fullcalendar.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.2/gcal.js"></script>
@@ -75,7 +76,6 @@
 
 <!--<script src="assets/js/flip.js"></script>-->
 <!--Bootstrap Related Script-->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 <script>
@@ -83,10 +83,10 @@
         //console.log("hello");
         $('#calendar').fullCalendar({
             // height: 'parent',
-            googleCalendarApiKey: 'AIzaSyBKKSpnHXlRtA3RsJ1bTf-PjV-a4FUMiZo',
+            googleCalendarApiKey: 'AIzaSyB8sgFrMNi-gkT09k56drpLSnmv4w-bd0Q',
 
             events: {
-                googleCalendarId: 'katogcholing.com_f7lv84tnvqojhe8vnv778gc9qo@group.calendar.google.com',
+                googleCalendarId: '26bna85bifhfcivhlmmd8v1reo@group.calendar.google.com',
                 //className: 'gcal-event' // an option!
                 backgroundColor: '#2E609B',
                 //color: '#1E508B',   // an option!
@@ -102,7 +102,7 @@
                         DOMPrinter = PrintElem('#app-container');
                         DOMPrinter.print();
                     },
-                    // icon: 'right-double-arrow'
+                    icon: 'right-double-arrow'
                 }
             },
 
