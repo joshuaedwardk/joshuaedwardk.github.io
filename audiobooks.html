@@ -104,6 +104,7 @@
 
 <!--Header-->
 <main role="main">
+
     <section class="audiobook-jumbotron text-center">
         <div class="container">
             <h1 class="jumbotron-heading">Audiobooks: Stand-Alone & Series</h1>
@@ -127,8 +128,10 @@
 
     <!--Content-->
     <div class="container mt-5">
-        <div class="row flex-xl-nowrap">
-
+        <div class="row ">
+            <br/>
+            <input type="text" id="myFilter" class="form-control" onkeyup="myFunction()" placeholder="Search for names..">
+            <br/>
                 <div id="audiobook">
                     <div class="card-group" >
                         <div class="card mt-4" v-for="item in items">
@@ -206,43 +209,75 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 <script>
-    var app = new Vue({
-        el: "#audiobook",
-        data: {
-            items: [],
-            isLoaded: false,
-        },
 
-        mounted: function () {
-            this.loadItems();
-        },
-        methods: {
-            loadItems: function () {
-                // Init variables
+        var app = new Vue({
+            el: "#audiobook",
+            data: {
+                filter: "all",
+                items: []
+            },
+            mounted: function () {
+                this.loadItems();
+            },
+            methods: {
+                loadItems: function () {
+                    // Init variables
 
-                var self = this;
-                var app_id = "apphBgiHVQtcKCzjH";
-                var app_key = "keyBDOAAjARP294wi";
-                this.items = [];
-                axios
-                    .get("https://api.airtable.com/v0/" + app_id + "/Books?view=grouped",
-                        {
-                            headers: {
-                                Authorization: "Bearer " + app_key
+                    var self = this;
+                    var app_id = "apphBgiHVQtcKCzjH";
+                    var app_key = "keyBDOAAjARP294wi";
+                    this.items = [];
+                    axios
+                        .get(
+                            "https://api.airtable.com/v0/" +
+                            app_id +
+                            "/Books?view=grouped",
+                            {
+                                headers: {
+                                    Authorization: "Bearer " + app_key
+                                }
                             }
-                        }
-                    )
-                    .then(function (response) {
-                        self.items = response.data.records;
-                    })
-                    .catch(function (error) {
-                        console.log(error);
-                    });
+                        )
+                        .then(function (response) {
+                            self.items = response.data.records;
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+            },
+            computed: {
+                filterCards() {
+                    if (this.filter === "all") {
+                        return this.items;
+                    } else {
+                        return this.items.filter(el => el.tag === this.filter);
+                    }
+                }
+            }
+
+        });
+
+</script>
+<script>
+
+
+    function myFunction() {
+        var input, filter, cards, cardContainer, h5, title, i;
+        input = document.getElementById("myFilter");
+        filter = input.value.toUpperCase();
+        cardContainer = document.getElementById("audiobook");
+        cards = cardContainer.getElementsByClassName("card mt-4");
+        for (i = 0; i < cards.length; i++) {
+            title = cards[i].querySelector(".card-audiobook-title");
+            if (title.innerText.toUpperCase().indexOf(filter) > -1) {
+                cards[i].style.display = "";
+            } else {
+                cards[i].style.display = "none";
             }
         }
-    });
+    }
 </script>
-
 <!--Google Analytics-->
 <script>
     window.dataLayer = window.dataLayer || [];
