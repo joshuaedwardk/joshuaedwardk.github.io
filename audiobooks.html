@@ -8,6 +8,10 @@
     <link href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/card.css" rel="stylesheet">
     <link href="assets/css/jumbotron.css" rel="stylesheet">
+<!--    <link rel="stylesheet" href="assets/css/card-flip.css">-->
+
+    <!--    Style-->
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <title>Stand-Alone & Series Audiobooks</title>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -27,7 +31,7 @@
         f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'dataLayer', 'GTM-MDQMC3Z');</script>
     <!-- End Google Tag Manager -->
-<!--    Favicons-->
+    <!--    Favicons-->
     <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="assets/favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="assets/favicon/apple-icon-72x72.png">
@@ -41,7 +45,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
-    <link rel="manifest" href="assets/favicon/manifest.json">
+<!--    <link rel="manifest" href="assets/favicon/manifest.json">-->
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
@@ -124,41 +128,62 @@
     <!--Content-->
     <div class="container mt-5">
         <div class="row flex-xl-nowrap">
-<!--            <div class="col-12 col-md-3 col-xl-2">-->
-<!--                <div class="sidebar-header">-->
-<!--                    <h3>Audiobook</h3>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5">-->
-                <div id="job">
+
+                <div id="audiobook">
                     <div class="card-group" >
-                        <div class="card mt-2" v-for="item in items">
-                            <div class="audiobook-card-header">
-                                <p class="card-audiobook-title"><a :href="item['fields']['url']">{{
-                                    item['fields']['Title'] }}</a></p>
-                            </div>
+                        <div class="card mt-4" v-for="item in items">
                             <img :src="item['fields']['bookCover'][0]['thumbnails']['large']['url']"
                                  alt="" class="card-img-top"
                                  v-if="item['fields']['bookCover']">
-                            <div class="card-body">
-                                <!--                            <h5 class="card-audiobook-sub"><a :href="item['fields']['url']">{{ item['fields']['subTitle'] }}</a></h5>-->
-                                <div class="card-audiobook-author"><a :href="item['fields']['url']">by {{
-                                    item['fields']['lookupAuthor'] }}</a></div>
-                                <div class="card-audiobook-series">{{ item['fields']['#inSeries'] }}</div>
+                                                       <div class="card-body">
+                                <p class="card-audiobook-title"><a :href="item['fields']['url']">{{
+                                    item['fields']['Title'] }}</a></p>
+                                <p class="card-audiobook-series">{{ item['fields']['#inSeries'] }}</p>
+                                <p class="card-audiobook-author"><a :href="item['fields']['url']">by {{
+                                    item['fields']['lookupAuthor'] }}</a></p>
                                 <p class="card-audiobook-genre">{{ item['fields']['lookupGenre'] }}</p>
                                 <p class="card-audiobook-download"><a :href="item['fields']['url']">Download</a></p>
+
                             </div>
 
                         </div>
                     </div>
                 </div>
-
-<!--            </div>-->
-
-
         </div>
     </div>
     <!--        End of bg-light-->
+
+
+
+<!--    <div class="container">-->
+<!--        <div class="row">-->
+<!--            <div class="col-md-4 card-container">-->
+<!--                <div class="card-flip">              -->
+<!--                    <div class="card front">-->
+<!--                        <img src="https://nikonrumors.com/wp-content/uploads/2014/03/Nikon-1-V3-sample-photo.jpg" class="card-img-top img-fluid">-->
+<!--                        <div class="card-block">-->
+<!--                            <h4 class="card-title">Front Card Title</h4>-->
+<!--                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+<!--                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
+<!--                        </div>-->
+<!--                    </div>    -->
+<!--                    <div class="card back">-->
+<!--                        <div class="card-header">-->
+<!--                            Featured-->
+<!--                        </div>-->
+<!--                        <div class="card-block">-->
+<!--                            <h4 class="card-title">Special title treatment</h4>-->
+<!--                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>-->
+<!--                            <a href="#" class="btn btn-primary">Go somewhere</a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--         -->
+<!--                </div>-->
+<!--            </div>-->
+<!--      -->
+
+<!--        </div>-->
+<!--    </div>-->
 </main>
 
 <footer class="text-muted">
@@ -172,6 +197,7 @@
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <!--vue JS - Airtable-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.21/vue.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js"></script>
 <script src="https://unpkg.com/vue"></script>
 <!--<script src="assets/js/flip.js"></script>-->
@@ -181,7 +207,7 @@
 <script src="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 <script>
     var app = new Vue({
-        el: "#job",
+        el: "#audiobook",
         data: {
             items: [],
             isLoaded: false,
