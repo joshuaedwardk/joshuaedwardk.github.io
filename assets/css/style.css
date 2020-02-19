@@ -12,3 +12,7 @@ body {
     /*height: 100vh;*/
     background-color: #e8e8e8;
 }
+
+[v-cloak]{
+    display: none;
+}
