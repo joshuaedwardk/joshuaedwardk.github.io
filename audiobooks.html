@@ -127,18 +127,22 @@
         <!--Content-->
         <div class="container mt-5">
             <div class="row ">
-                <br />
+                <br/>
+
+                <h2 class="jumbotron-heading">Stand Alone Books</h2>
+
+                <br/>
                 <input type="text" id="myFilter" class="form-control" onkeyup="myFunction()"
-                    placeholder="Search for names..">
-                <br />
+                       placeholder="Search for names..">
+                <br/>
                 <div id="audiobook">
 
-                    <h1 class="jumbotron-heading">Audiobooks: Stand-Alone</h1>
+
                     <div v-cloak class="card-group">
                         <div class="card mt-4" v-for="(ab, index) in items" :key="ab['fields']['createdTime']">
 
                             <img :src="ab['fields']['bookCover'][0]['thumbnails']['large']['url']" alt=""
-                                class="card-img-top" v-if="ab['fields']['bookCover']">
+                                 class="card-img-top" v-if="ab['fields']['bookCover']">
                             <div class="card-body">
                                 <p class="card-audiobook-title"><a :href="ab['fields']['url']">{{
                                 ab['fields']['Title'] }}</a></p>
