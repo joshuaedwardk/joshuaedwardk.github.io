@@ -1,0 +1,36 @@
+.fc-day-grid-event .fc-content {
+    white-space: normal;
+    overflow: hidden;
+}
+
+.fc-event {
+    position: relative;
+    display: block;
+    font-size: 12px;
+    line-height: 14px;
+    border-radius: 7px;
+    padding: 2px 5px;
+    border: 1px solid #3a87ad;
+}
+
+.fc-event .fc-bg{
+    background: inherit;
+}
+
+.fc-content>.fc-title:first-of-type{
+    color: yellow;
+}
+
+.fc-month-view .fc-content{
+    display: flex;
+}
+
+.fc-month-view .fc-time{
+    flex-grow: 0;
+    min-width: 25%;
+}
+
+.fc-month-view .fc-title{
+    flex-grow: 1;
+}
+

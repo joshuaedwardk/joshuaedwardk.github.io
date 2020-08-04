@@ -5,7 +5,14 @@
       <paths name="NSTP">
         <serverdata>
           <mappings>
-            <mapping local="" web="" />
+            <mapping local="$PROJECT_DIR$/../NSTP WEBSITE" web="" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="NSTP-Old-Site">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>

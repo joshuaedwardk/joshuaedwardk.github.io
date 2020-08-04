@@ -1,0 +1,1 @@
+'<!--==(' & {Letter} & ')==--><div class="modal fade" id="' & {Letter} & '" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">' & {WC} & '</h4></div><div class="modal-body"><p><strong>Course Description:</strong>' & {Course Description} & '</p><p><strong>Learning Objectives</strong> ' & {Learning Objective}

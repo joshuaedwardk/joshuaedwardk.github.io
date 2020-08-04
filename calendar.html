@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <!-- Bootstrap CSS -->
+    <link href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/card.css" rel="stylesheet">
+    <link href="assets/css/jumbotron.css" rel="stylesheet">
+    <!--    Full Calendar-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.2/fullcalendar.css">
+    <link rel="stylesheet" href="assets/css/calendar.css">
+<!--    bootstrap theme calendar-->
+
+
+    <title>Girls Calendar</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<!--    <script async src="//www.googletagmanager.com/gtag/js?id=UA-153143135-1"></script>-->
+    <!-- Google Tag Manager -->
+<!--    <script>(function (w, d, s, l, i) {-->
+<!--        w[l] = w[l] || [];-->
+<!--        w[l].push({-->
+<!--            'gtm.start':-->
+<!--                new Date().getTime(), event: 'gtm.js'-->
+<!--        });-->
+<!--        var f = d.getElementsByTagName(s)[0],-->
+<!--            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';-->
+<!--        j.async = true;-->
+<!--        j.src =-->
+<!--            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;-->
+<!--        f.parentNode.insertBefore(j, f);-->
+<!--    })(window, document, 'script', 'dataLayer', 'GTM-MDQMC3Z');</script>-->
+    <!-- End Google Tag Manager -->
+    <!--    Favicons-->
+    <link href="assets/favicon/apple-icon-57x57.png" rel="apple-touch-icon" sizes="57x57">
+    <link href="assets/favicon/apple-icon-60x60.png" rel="apple-touch-icon" sizes="60x60">
+    <link href="assets/favicon/apple-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
+    <link href="assets/favicon/apple-icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
+    <link href="assets/favicon/apple-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
+    <link href="assets/favicon/apple-icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
+    <link href="assets/favicon/apple-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
+    <link href="assets/favicon/apple-icon-152x152.png" rel="apple-touch-icon" sizes="152x152">
+    <link href="/apple-icon-180x180.png" rel="apple-touch-icon" sizes="180x180">
+    <link href="assets/favicon/android-icon-192x192.png" rel="icon" sizes="192x192" type="image/png">
+    <link href="assets/favicon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+    <link href="assets/favicon/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png">
+    <link href="assets/favicon/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+    <!--    <link rel="manifest" href="assets/favicon/manifest.json">-->
+    <meta content="#ffffff" name="msapplication-TileColor">
+    <meta content="assets/favicon/ms-icon-144x144.png" name="msapplication-TileImage">
+    <meta content="#ffffff" name="theme-color">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div id="calendar"></div>
+    </div>
+</div>
+
+<footer class="text-muted">
+    <div class="container">
+        <p class="float-right">
+            <a href="#">Back to top</a>
+        </p>
+
+    </div>
+</footer>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.2/fullcalendar.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.2/gcal.js"></script>
+
+
+<!--<script src="assets/js/flip.js"></script>-->
+<!--Bootstrap Related Script-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<script>
+    $(document).ready(function () {
+        //console.log("hello");
+        $('#calendar').fullCalendar({
+            // height: 'parent',
+            googleCalendarApiKey: 'AIzaSyB8sgFrMNi-gkT09k56drpLSnmv4w-bd0Q',
+
+            events: {
+                googleCalendarId: '26bna85bifhfcivhlmmd8v1reo@group.calendar.google.com',
+                //className: 'gcal-event' // an option!
+                backgroundColor: '#2E609B',
+                //color: '#1E508B',   // an option!
+                textColor: '#f1f1f1', // an option!
+                borderColor: '#fff'
+            },
+            timeFormat: 'h(:mm)t',
+
+            customButtons: {
+                print: {
+                    text: 'print',
+                    click: function () {
+                        DOMPrinter = PrintElem('#app-container');
+                        DOMPrinter.print();
+                    },
+                    icon: 'right-double-arrow'
+                }
+            },
+
+            header: {
+                left: 'title, print',
+                center: '',
+                right: 'today prev,next month,agendaWeek,agendaDay, listWeek' //basicWeek,basicDay,
+            },
+            views: {
+                listWeek: {
+                    buttonText: 'weekly agenda'
+                }
+            }
+
+        });
+
+    });
+</script>
+<!--Google Analytics-->
+<!--<script>-->
+<!--    window.dataLayer = window.dataLayer || [];-->
+
+<!--    function gtag() {-->
+<!--        dataLayer.push(arguments);-->
+<!--    }-->
+
+<!--    gtag('js', new Date());-->
+
+<!--    gtag('config', 'UA-153143135-1');-->
+<!--</script>-->
+</body>
+</html>
