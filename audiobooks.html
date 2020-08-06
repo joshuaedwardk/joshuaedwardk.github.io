@@ -153,6 +153,12 @@
                                 <p class="card-audiobook-download"><a :href="ab['fields']['url']">Download</a></p>
                             </div>
                         </div>
+                        <b-pagination
+                                :total-rows="totalRows"
+                                v-model="currentPage"
+                                :per-page="perPage"
+                                hide-goto-end-buttons
+                        />
                     </div>
                 </div>
             </div>
@@ -187,8 +193,11 @@
             el: "#audiobook",
             data: {
                 filter: "all",
-                items: []
+                items: [],
+                currentPage: 1,
+                perPage: 200,
             },
+
             mounted: function () {
                 this.loadItems();
             },
@@ -203,7 +212,7 @@
                         .get(
                             "https://api.airtable.com/v0/" +
                             app_id +
-                            "/Standalone?view=grouped",
+                            "/Books?view=grouped",
                             {
                                 headers: {
                                     Authorization: "Bearer " + app_key
@@ -225,7 +234,19 @@
                     } else {
                         return this.items.filter(el => el.tag === this.filter);
                     }
-                }
+                },
+
+            },
+            lists () {
+                const items = this.data;
+                // Return just page of items needed
+                return items.slice(
+                    (this.currentPage - 1) * this.perPage,
+                    this.currentPage * this.perPage
+                )
+            },
+            totalRows () {
+                return this.data.length
             }
         });
 

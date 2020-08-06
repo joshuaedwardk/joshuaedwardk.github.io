@@ -8,7 +8,7 @@
     <link href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/ab-2.css" rel="stylesheet">
     <link href="assets/css/jumbotron.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!--    Style-->
     <link rel="stylesheet" href="assets/css/style.css">
@@ -98,7 +98,7 @@
 
 <!--Header-->
 <main role="main">
-
+    <!--Section Information-->
     <section class="audiobook-jumbotron text-center">
         <div class="container">
             <h1 class="jumbotron-heading">Audiobooks: Stand-Alone & Series</h1>
@@ -118,12 +118,10 @@
                role="button">Suggestion Form</a>
         </div>
     </section>
-
-
     <!--Content-->
     <div id="vue">
         <h1>Cards Hover, Load More, & Filter With Transitions</h1>
-        <input class="search" placeholder="Search a title, description, or category" v-model="liveSearchString" />
+        <input class="search" placeholder="Search a title, description, or category" v-model="liveSearchString"/>
         <div class="loading" v-show="loading"></div>
         <div class="images-wrapper" v-show="!loading">
             <transition-group name="image-wrapper" tag="div" class="images-inner">
@@ -131,7 +129,8 @@
                     <div class="image-img" :style="{ background: 'url(' + image.url + ')' }"></div>
                     <div class="image-details">
                         <h3 class="image-title">{{ image.name }}</h3>
-                        <p class="image-description"><span></span>{{ image.description | truncateText }}<span></span></p>
+                        <p class="image-description"><span></span>{{ image.description | truncateText }}<span></span>
+                        </p>
                         <p class="image-category">{{ image.category }}</p>
                     </div>
                 </div>
@@ -301,14 +300,14 @@
         },
         computed: {
             truncatedFilteredImages() {
-                if(this.liveSearchString.trim().length > 0) {
+                if (this.liveSearchString.trim().length > 0) {
                     return this.images.filter((image) => {
                         let parts = this.liveSearchString.trim().split(" ");
 
-                        for(let part of parts) {
+                        for (let part of parts) {
                             let searchRegex = new RegExp(part, 'i');
 
-                            if(!(
+                            if (!(
                                 searchRegex.test(image.name) ||
                                 searchRegex.test(image.description) ||
                                 searchRegex.test(image.category)
@@ -320,13 +319,13 @@
                         return true;
                     })
                 } else {
-                    return this.images.slice(0,this.imagesLimit)
+                    return this.images.slice(0, this.imagesLimit)
                 }
             }
         },
         filters: {
             truncateText: (text) => {
-                if(text.length > 60) {
+                if (text.length > 60) {
                     text = text.substring(0, 125) + "...";
                 }
 
@@ -340,7 +339,7 @@
 
                 localImages.forEach((image) => {
                     let newImage = image
-                    newImage.id  = image.id * 2
+                    newImage.id = image.id * 2
                     this.images.push(newImage)
                 })
 
@@ -369,7 +368,7 @@
             showMore() {
                 this.imagesLimit += 6
 
-                if(this.imagesLimit >= this.images.length) {
+                if (this.imagesLimit >= this.images.length) {
                     this.imagesLimit = this.images.length
                     this.allLoaded = true
                 }
