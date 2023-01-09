@@ -1,1 +1,58 @@
 
+.adslot_2 {
+	height: 250px;
+}
+h1 {
+	font-size: 1.6rem;
+}
+h2 {
+	font-size: 1.4rem;
+}
+#gen {
+	max-width: 500px;
+	background: #efefef;
+	padding: 20px;
+	border-radius: 0.25rem;
+	touch-action: manipulation;
+}
+#gen .col input[type="text"] {
+	font-weight: bold;
+}
+#count,
+#count2,
+#min,
+#sec {
+	font-size: 4rem;
+}
+#addbtn,
+#addbtn2,
+#subbtn,
+#subbtn2 {
+	font-size: 2rem;
+}
+#rstbtn span {
+	font-weight: bold;
+}
+#clearbtn span {
+	font-size: large;
+	font-weight: bold;
+}
+#gen .input-group-append {
+	background: #fff;
+}
+#timediv label {
+	font-weight: bold;
+	font-size: 1.25rem;
+}
+/*#timediv button { font-weight:bold; font-size:1.25rem; }*/
+#timediv div {
+	width: 40%;
+}
+#timediv span {
+	font-size: 3rem;
+}
+@media all and (max-width: 576px) {
+	#timediv div {
+		width: 60%;
+	}
+}
