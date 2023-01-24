@@ -123,7 +123,7 @@ function onTime() {
 function onClear() {
 	clearTimeout(timer);
 	play = false;
-	min.value = "20";
+	min.value = "10";
 	sec.value = "00";
 	min.disabled = false;
 	sec.disabled = false;
@@ -149,4 +149,26 @@ function onRemove2() {
 	var num = count2.value;
 	num--;
 	count2.value = num;
+}
+function onReset() {
+	var res = confirm("Are you sure?");
+	if (res) {
+		count.value = 0;
+		count2.value = 0;
+	}
+	audio.pause();
+}
+function onExpand() {
+	timebtn.blur();
+	if (expand == false) {
+		expand = true;
+		timebtn.innerHTML =
+			"<img src='https://www.rapidtables.com/lib/icons/material/svg/expand_more_black_24dp.svg' loading='lazy' width='24' height='24' alt=''> TIME";
+		timebtn.title = "Collapse";
+	} else {
+		expand = false;
+		timebtn.innerHTML =
+			"<img src='https://www.rapidtables.com/lib/icons/material/svg/expand_less_black_24dp.svg' loading='lazy' width='24' height='24' alt=''> TIME";
+		timebtn.title = "Expand";
+	}
 }
