@@ -1,12 +1,7 @@
 .adslot_2 {
-	height: 250px;
+	height: 500px;
 }
-h1 {
-	font-size: 1.6rem;
-}
-h2 {
-	font-size: 1.4rem;
-}
+
 #gen {
 	max-width: 500px;
 	background: #efefef;
@@ -21,13 +16,13 @@ h2 {
 #count2,
 #min,
 #sec {
-	font-size: 4rem;
+	font-size: 64px;
 }
 #addbtn,
 #addbtn2,
 #subbtn,
 #subbtn2 {
-	font-size: 2rem;
+	font-size: 32px;
 }
 #rstbtn span {
 	font-weight: bold;
@@ -41,17 +36,17 @@ h2 {
 }
 #timediv label {
 	font-weight: bold;
-	font-size: 1.25rem;
+	font-size: 20px;
 }
 /*#timediv button { font-weight:bold; font-size:1.25rem; }*/
-#timediv div {
-	width: 40%;
-}
+/*#timediv div {*/
+/*	width: 40%;*/
+/*}*/
 #timediv span {
-	font-size: 3rem;
+	font-size: 36px;
 }
-@media all and (max-width: 576px) {
-	#timediv div {
-		width: 60%;
-	}
-}
+/*@media all and (max-width: 576px) {*/
+/*	#timediv div {*/
+/*		width: 60%;*/
+/*	}*/
+/*}*/
