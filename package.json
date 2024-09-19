@@ -52,5 +52,8 @@
     "method": "get",
     "url": "https://api.coindesk.com/v1/bpi/currentprice.json"
   },
-  "request": {}
+  "request": {},
+  "dependencies": {
+    "airtable": "^0.12.2"
+  }
 }
