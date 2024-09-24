@@ -43,7 +43,7 @@
                             <input class="btn btn-primary btn-lg" type="button" value="Ace+" onclick="updateStat('ace', 1)">
                         </div>
                         <div class="d-grid gap-2 col-4 mx-auto">
-                            <input class="btn btn-danger btn-lg" type="button" value="Ace-" onclick="updateStat('ace', -1)">
+                            <input class="btn btn-lg btn-danger btn-lg" type="button" value="Ace-" onclick="updateStat('ace', -1)">
                         </div>
                     </div>
 
@@ -57,7 +57,7 @@
                             <input class="btn btn-primary btn-lg" type="button" value="ServeIn+" onclick="updateStat('serveIn', 1)">
                         </div>
                         <div class="d-grid gap-2 col-4 mx-auto">
-                            <input class="btn btn-danger btn-lg" type="button" value="ServeIn-" onclick="updateStat('serveIn', -1)">
+                            <input class="btn btn-lg btn-danger btn-lg" type="button" value="ServeIn-" onclick="updateStat('serveIn', -1)">
                         </div>
                     </div>
 
@@ -68,10 +68,10 @@
                             <input type="number" class="form-control form-control-lg" id="drop" value="0">
                         </div>
                         <div class="d-grid gap-2 col-4 mx-auto">
-                            <input class="btn btn-primary" type="button" value="Drop+" onclick="updateStat('drop', 1)">
+                            <input class="btn btn-lg btn-primary" type="button" value="Drop+" onclick="updateStat('drop', 1)">
                         </div>
                         <div class="d-grid gap-2 col-4 mx-auto">
-                            <input class="btn btn-danger" type="button" value="Drop-" onclick="updateStat('drop', -1)">
+                            <input class="btn btn-lg btn-danger" type="button" value="Drop-" onclick="updateStat('drop', -1)">
                         </div>
                     </div>
 
@@ -82,10 +82,10 @@
                             <input type="number" class="form-control form-control-lg" id="serveOut" value="0">
                         </div>
                         <div class="d-grid gap-2 col-4 mx-auto">
-                            <input class="btn btn-primary" type="button" value="ServeOut+" onclick="updateStat('serveOut', 1)">
+                            <input class="btn btn-lg btn-primary" type="button" value="ServeOut+" onclick="updateStat('serveOut', 1)">
                         </div>
                         <div class="d-grid gap-2 col-4 mx-auto">
-                            <input class="btn btn-danger" type="button" value="ServeOut-" onclick="updateStat('serveOut', -1)">
+                            <input class="btn btn-lg btn-danger" type="button" value="ServeOut-" onclick="updateStat('serveOut', -1)">
                         </div>
                     </div>
 
@@ -96,14 +96,14 @@
                             <input type="number" class="form-control form-control-lg" id="serveShort" value="0">
                         </div>
                         <div class="d-grid gap-2 col-4 mx-auto">
-                            <input class="btn btn-primary" type="button" value="ServeShort+" onclick="updateStat('serveShort', 1)">
+                            <input class="btn btn-lg btn-primary" type="button" value="ServeShort+" onclick="updateStat('serveShort', 1)">
                         </div>
                         <div class="d-grid gap-2 col-4 mx-auto">
-                            <input class="btn btn-danger" type="button" value="ServeShort-" onclick="updateStat('serveShort', -1)">
+                            <input class="btn btn-lg btn-danger" type="button" value="ServeShort-" onclick="updateStat('serveShort', -1)">
                         </div>
                     </div>
 
-                    <button type="button" class="btn btn-primary mt-4" onclick="calculateStats()">Calculate Stats</button>
+                    <button type="button" class="btn btn-lg btn-danger" onclick="calculateStats()">Calculate Stats</button>
 
                 </form>
 
@@ -123,7 +123,7 @@
                     <li class="list-group-item">Serve Percentage: <span id="servePercentage">0</span>%</li>
                 </ul>
 
-                <button type="button" class="btn btn-danger mt-4" onclick="sendToAirtable()">Submit to Airtable</button>
+                <button type="button" class="btn btn-lg btn-danger mt-4" onclick="sendToAirtable()">Submit to Airtable</button>
 
 
             </div>
