@@ -54,6 +54,8 @@
   },
   "request": {},
   "dependencies": {
-    "airtable": "^0.12.2"
+    "airtable": "^0.12.2",
+    "bootstrap": "^5.3.3",
+    "sass": "^1.79.3"
   }
 }

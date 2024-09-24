@@ -1,6 +1,3 @@
-$("#datepicker").datepicker({
-    uiLibrary: "bootstrap5"
-});
 
 // Function to update statistics based on button clicks
 function updateStat(statId, value) {
