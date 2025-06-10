@@ -1,0 +1,454 @@
+/* Remove header */
+h1.page-header {
+	display: none;
+}
+.compare-heading {
+    position: relative;
+    padding-top: 10px; 
+	padding-bottom: 20px; 
+	/* Prevent overlap of the line with text */
+}
+.red-line-heading {
+    position: relative;
+    padding-top: 10px; 
+    padding-bottom: 20px;
+}
+.red-line-heading::before {
+    content: "";
+    position: absolute;
+    top: 0; /* Line above */
+    left: 0;
+    width: 20%;
+    height: 4px;
+    background-color: #a60f2d;
+}
+.grey-line-heading {
+    position: relative;
+    padding-top: 10px; 
+    padding-bottom: 20px;
+}
+.grey-line-heading::before {
+    content: "";
+    position: absolute;
+    top: 0; /* Line above */
+    left: 0;
+    width: 20%;
+    height: 4px;
+    background-color: #939498;
+}
+
+/* Remove gap */
+.region-content {
+	margin-top: 0;
+}
+.list-group {
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+.list-group-item {
+    position: relative;
+    display: block;
+	 font-size: 13px;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border-bottom: 2px solid #ddd;
+	
+}
+.badge {
+    display: inline-block;
+    min-width: 10px;
+    padding: 3px 7px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+    color: #a60f2d;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    background-color: #fff;
+    border-radius: 10px;
+}
+/* img-frame */
+/* Container for the framed image with background block */
+.wsuv-img-framed {
+    position: relative; /* Ensure positioning for pseudo-elements */
+    outline-style: solid;
+    outline-width: 1px;
+    outline-offset: -1.75rem;
+    outline-color: #fff;
+    display: inline-block; /* Adjust to match the content dimensions */
+}
+
+/* Add the background block using ::before */
+.wsuv-img-framed::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #a8292b; /* Red background color */
+    z-index: -1; /* Ensure it sits behind the framed image */
+    transform: translate(-1rem, 1rem); /* Adjust position for the block */
+}
+/* Hero Section */
+.hero-bs {
+	position: relative;
+	background-image: url("https://www.vancouver.wsu.edu/files/2025-03/Commencement-2400x1200_01-WSU-Vancouver.jpg");
+	background-size: cover;
+	background-position: center;
+	height: 400px;
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.herobs-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+.herobs-text {
+	position: relative;
+	z-index: 2;
+	text-align: center;
+}
+.herobs-text h1 {
+	font-size: 3em;
+	color: #fff;
+	font-weight: 700
+	margin: 0;
+}
+.herobs-text p {
+	font-size: 20px;
+}
+/* About Section */
+.about-section {
+	background-color: #fff;
+	padding: 40px;
+	margin-bottom: 20px;
+}
+.about-section h2 { margin-top: 0;
+}
+/* Timeline Section */
+.wsuv-timeline-section {
+	background-color: #a60f2d;
+	color: #fff;
+	padding: 2em;
+	margin: -6em 0 !important;
+	position: relative;
+}
+.wsuv-timeline-section h3,
+.wsuv-timeline-section p,
+.wsuv-timeline-section strong {
+	color: #fff;
+}
+/* Info Boxes */
+.info-box {
+	background-color: #fff;
+	padding: 20px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	margin-bottom: 20px;
+	border-left: 4px solid #939498;
+}
+.info-box h4 {
+	margin-top: 0;
+	font-weight: bold;}
+.info-box p {
+	margin-bottom: 20px;
+}
+/* Info Boxes */
+.info-box-red {
+	background-color: #fff;
+	padding: 20px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	margin-bottom: 20px;
+	border-left: 4px solid #a60f2d;
+}
+.info-box-red h4 {
+	margin-top: 0;
+	font-weight: bold;}
+.info-box-red p {
+	margin-bottom: 20px;
+}
+/* News Card Style */
+.news-card {
+	background-color: #fff;
+	padding: 15px;
+	margin-bottom: 15px;
+	text-align: center;
+	border-radius: 8px;
+	transition: transform 0.2s, box-shadow 0.2s;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.news-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+.news-card img {
+	width: 100%;
+	border-radius: 8px;
+	margin-bottom: 10px;
+}
+.news-card .news-title {
+	margin: 10px 0;
+	font-weight: bold;
+}
+.news-card p {
+	font-size: 12px;
+	color: #777;
+}
+/* Profile Card Style */
+.profile-card,
+.profile-card-left-image {
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	padding: 15px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	margin-bottom: 20px;
+	background-color: #fff;
+}
+
+.profile-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.profile-content-full {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 10px;
+}
+
+.profile-card img {
+	width: 100%;
+	height: auto;
+	border-radius: 4px;
+}
+
+.profile-content .profile-info {
+	padding: 10px;
+	text-align: center;
+	height: 120px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.profile-info h4 {
+	margin-top: 6px;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.profile-info p {
+	font-size: 14px;
+	color: #777;
+}
+
+.profile-info a {
+	margin-top: 10px;
+	color: #fff;
+	background-color: #c1232a;
+	border: none;
+	padding: 8px 12px;
+	text-transform: uppercase;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.profile-info a:hover {
+	background-color: #a92025;
+}
+
+.profile-card-left-image img {
+	width: 197px;
+	height: 297px;
+	margin-right: 15px;
+	border-radius: 4px;
+}
+
+.profile-content-full .profile-info {
+	height: 120px;
+	text-align: left;
+}
+
+.circular-stat {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 20px;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+        .circular-stat:hover {
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transform: scale(1.05);
+        }
+        .circular-stat-number {
+            font-size: 36px;
+            color: #a60f2d;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .circular-stat-label {
+            color: #666;              
+            text-align: center;
+        }
+
+/* Media Queries */
+@media (max-width: 992px) {
+	.profile-content {
+		flex-direction: row;
+		justify-content: flex-start;
+		padding: 10px;
+	}
+
+	.profile-card img {
+		width: 197px;
+		height: 297px;
+		margin-right: 15px;
+	}
+
+	.profile-info {
+		height: 120px;
+		text-align: left;
+	}
+
+	.profile-info h4 {
+		margin-top: 0;
+		font-size: 16px;
+	}
+
+	.profile-info p {
+		font-size: 12px;
+	}
+
+	.profile-info a {
+		padding: 6px 10px;
+	}
+
+	.wsuv-timeline-section {
+		background-color: #a60f2d;
+		color: #fff;
+		padding: 2em;
+		margin-top: 2em !important;
+	}
+}
+
+/* Font and Header Styles */
+@font-face {
+	font-family: "wsu-outline";
+	src: url("https://cdn.web.wsu.edu/css/Montserrat-Bold-static.ttf")
+		format("opentype");
+}
+
+.wsu-custom-outline-title {
+	text-transform: uppercase;
+	font-size: 3em;
+	text-align: center;
+	color: #4d4d4d;
+	margin-bottom: 25px;
+}
+.wsu-custom-outline-title::before {
+	content: "";
+	background-color: #ca1237;
+	display: block;
+	height: 0.1em;
+	width: 3em;
+	margin: 0 auto 0.5em;
+}
+.wsu-custom-outline-title strong {
+	font-family: "wsu-outline";
+	font-weight: 700;
+	color: #fff;
+	font-size: 1em;
+	letter-spacing: 1px;
+	-webkit-text-stroke: 2px #ca1237;
+	text-stroke: 2px #ca1237;
+}
+@media (max-width: 1300px) {
+	.wsu-custom-outline-title {
+		font-size: 56px;
+	}
+
+	.wsu-custom-outline-title strong {
+		font-size: 57px;
+	}
+}
+
+@media (max-width: 700px) {
+	.wsu-custom-outline-title {
+		font-size: 48px;
+	}
+
+	.wsu-custom-outline-title strong {
+		font-size: 49px;
+	}
+}
+
+@media (max-width: 500px) {
+	.wsu-custom-outline-title {
+		font-size: 32px;
+	}
+
+	.wsu-custom-outline-title strong {
+		font-size: 33px;
+	}
+}
+
+
+
+
+/* General Timeline Styles */
+.timeline {
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline-item {
+    position: relative;
+    margin: 20px 0;
+    opacity: 0; /* Hidden by default for animation */
+    transform: translateX(-100%); /* Start off-screen */
+    animation: slide-in 1s forwards;
+}
+
+.timeline-item:nth-child(2) {
+    animation-delay: 0.5s; /* Delay for the second item */
+}
+
+.timeline-item:nth-child(3) {
+    animation-delay: 1s; /* Delay for the third item */
+}
+
+.timeline-content {
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Keyframes Animation */
+@keyframes slide-in {
+    to {
+        opacity: 1;
+        transform: translateX(0); /* Slide to original position */
+    }
+}
