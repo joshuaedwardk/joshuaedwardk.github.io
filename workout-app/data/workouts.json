@@ -1,0 +1,57 @@
+[
+  {
+    "name": "H~Row Machine",
+    "bodyCategory1": "Back",
+    "bodyCategory2": "Biceps",
+    "videoExample": "",
+    "workoutCategory": "H",
+    "image": "https://v5.airtableusercontent.com/v3/u/48/48/1718856000000/0YhJ5mWiYxkWXGZkPZDPVw/LbXZpSaWk5ZTS4oh-I-NacI_5iTbbgEwT8GCVXgIPzI/image",
+    "workoutName": "Row Machine",
+    "note": "",
+    "dateAdded": "2025-06-13T15:57:00"
+  },
+  {
+    "name": "H~Incline Chest Press",
+    "bodyCategory1": "Chest",
+    "bodyCategory2": "Triceps",
+    "videoExample": "",
+    "workoutCategory": "H",
+    "image": "https://v5.airtableusercontent.com/v3/u/48/48/1718856000000/RJe_O2z7n7Q8U9rkStvFlQ/c4ib3oU-D-n3FHYJrjDhFz_aI2qH40AKNefUHY4mlq8/image",
+    "workoutName": "Incline Chest Press",
+    "note": "",
+    "dateAdded": "2025-06-13T15:57:00"
+  },
+  {
+    "name": "H~Lat Pulldown Machine",
+    "bodyCategory1": "Back",
+    "bodyCategory2": "Biceps",
+    "videoExample": "",
+    "workoutCategory": "H",
+    "image": "https://v5.airtableusercontent.com/v3/u/48/48/1718856000000/nv_zPZEx8cQNTCTyrObxQg/Z1R4VME1iopY5JmQulchZdDNMUPnRZZuM1wnkpmZzOM/image",
+    "workoutName": "Lat Pulldown Machine",
+    "note": "",
+    "dateAdded": "2025-06-13T15:57:00"
+  },
+  {
+    "name": "H~Overhead Shoulder Press",
+    "bodyCategory1": "Shoulders",
+    "bodyCategory2": "Triceps",
+    "videoExample": "",
+    "workoutCategory": "H",
+    "image": "https://v5.airtableusercontent.com/v3/u/48/48/1718856000000/OBdTAjvIGTiqNmphMaLoFA/TUuZn6N01vcm4_zX2Ydekn7edUJd1lBdLEnZJv5EV0s/image",
+    "workoutName": "Overhead Shoulder Press",
+    "note": "",
+    "dateAdded": "2025-06-13T15:57:00"
+  },
+  {
+    "name": "H~Calf Raise",
+    "bodyCategory1": "Calves",
+    "bodyCategory2": "",
+    "videoExample": "",
+    "workoutCategory": "H",
+    "image": "https://v5.airtableusercontent.com/v3/u/48/48/1718856000000/ywrrwWxJD0zhLrWvHEoANQ/suZMNDEZMMmqgo-D0OAgBRjPfXYp2wnmPUY_lXBocYo/image",
+    "workoutName": "Calf Raise",
+    "note": "",
+    "dateAdded": "2025-06-13T15:57:00"
+  }
+]

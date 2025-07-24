@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Workout Tracker</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body>
+  <header>
+    <h1>Workout Tracker</h1>
+    <div class="filters">
+      <select id="userFilter">
+        <option value="">All Users</option>
+      </select>
+      <select id="categoryFilter">
+        <option value="">All Categories</option>
+      </select>
+      <select id="weekFilter">
+        <option value="">All Weeks</option>
+      </select>
+    </div>
+  </header>
+
+<body>
+    <table id="workoutTable">
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Workout</th>
+          <th>Category</th>
+          <th>Weight × Reps</th>
+          <th>Notes</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+
+  <div class="card">
+  <div class="container">
+       <section id="new-entry">
+    <h2>Add New Workout</h2>
+    <form id="entryForm">
+      <label for="userSelect">User:</label>
+      <select id="userSelect" name="User">
+        <option value="Josh">Josh</option>
+        <option value="Stella">Stella</option>
+        <option value="Patty">Patty</option>
+      </select>
+</form>
+  <form id="entryForm"></form>
+      <input name="Workout" placeholder="Workout" required />
+      <input name="Category" placeholder="Category" />
+      <input name="Date" placeholder="Date (e.g. July 24, 2025 5:00pm)" />
+      <input name="repXweight" placeholder="rep x weight" />
+      <button type="submit">Add Entry</button>
+    </form>
+  </section>
+  </div>
+</div>
+  <script type="module" src="assets/js/main.js"></script>
+</body>
+</html>
